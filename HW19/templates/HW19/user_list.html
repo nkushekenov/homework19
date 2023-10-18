@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+    {% for user in users %}
+        <li>{{ user.username }} - {{ user.email }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Get User Detail</h2>
+    <form action="{% url 'user-detail' %}" method="get">
+        <input type="text" name="user_id" placeholder="Enter User ID">
+        <input type="submit" value="Get Detail">
+    </form>
+
+</body>
+</html>
